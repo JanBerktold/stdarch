@@ -203,6 +203,8 @@ jobs:
     - run: cargo generate-lockfile
 
     # Configure some env vars based on matrix configuration
+    - run: objdump --version
+      shell: bash
     - run: echo "PROFILE=--profile=${{matrix.profile}}" >> $GITHUB_ENV
       shell: bash
     - run: echo "NORUN=1" >> $GITHUB_ENV
